@@ -1,0 +1,189 @@
+/* Estilos generales */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+  background: #007bff;
+}
+
+header img {
+  max-width: 150px;
+  border-radius: 50%;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2em;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Preguntas y opciones */
+.question {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  background: #f8f9fa;
+}
+
+.question h2 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+/* Opciones: se muestran en fila y se adaptan */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.option {
+  flex: 1 1 calc(33.33% - 10px);
+  background: #e9ecef;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s, border 0.3s;
+}
+
+.option:hover {
+  background: #d6d8db;
+}
+
+.option input {
+  display: none;
+}
+
+.option label {
+  cursor: pointer;
+  width:100%;
+  padding:10px;
+  display: block;
+}
+
+/* Estilo para la opción seleccionada */
+.option.selected {
+  border: 2px solid #007bff;
+  background: #cce5ff;
+  
+}
+
+/* Botones */
+button {
+  background: #007bff;
+  display: block;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1em;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Botones de navegación para preguntas */
+
+
+.prev-btn:hover {
+  background: #0e89e7;
+}
+
+/* Estilo para los inputs seleccionados */
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+  background-color: #8787da; /* Color cuando se selecciona */
+  color: white; /* Texto blanco */
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+/* Estilo para los inputs cuando no están seleccionados por defecto */
+input[type="radio"]:not(:checked) + label,
+input[type="checkbox"]:not(:checked) + label {
+  background-color: #f1f1f1; /* Fondo gris claro */
+  color: #333; /* Color del texto */
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+/* Efecto hover para los inputs no seleccionados */
+input[type="radio"]:not(:checked):hover + label,
+input[type="checkbox"]:not(:checked):hover + label {
+  background-color: #ddd; /* Fondo gris al pasar el mouse */
+  cursor: pointer; /* Apunta con el cursor */
+}
+
+
+
+
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+
+
+
+
+
+.vehiculos-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px;
+  justify-content: center;
+  max-width: 900px; /* Ajusta el ancho según necesites */
+  margin: auto; /* Centra el contenedor */
+}
+
+.vehiculo {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  max-width: 250px;
+}
+
+.vehiculo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Para la segunda fila con 2 elementos */
+.vehiculo:nth-child(n+4) {
+  grid-column: span 1;
+}
+
+/* Centrar la segunda fila si hay solo 2 elementos */
+.vehiculo:nth-child(4) {
+  grid-column-start: 2;
+}

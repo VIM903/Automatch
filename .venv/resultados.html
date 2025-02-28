@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Resultados</title>
+  <link rel="stylesheet" href="C:/Users/swatc/Desktop/UNI/Proyecto grupal/Automatch/.venv/static/styles.css" />
+</head>
+
+
+
+
+<body>
+  <h1>Estos son los vehículos recomendados</h1>
+  <div class="vehiculos-container">
+    {% for coche in coches %}
+      <div class="vehiculo">
+        <img src="{{ coche['URL Imagen'] }}" alt="Imagen del vehículo">
+        <h2>{{ coche['Maker'] }} {{ coche['Version'] }}</h2>
+        <p>Precio: {{ coche['Price'] }} €</p>
+        <p>Año: {{ coche['Year'] }}</p>
+        <p>Kms: {{ coche['Kms'] }}</p>
+        <a href="{{ coche['URL Producto'] }}" target="_blank">Ver más detalles</a>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+
+</html>

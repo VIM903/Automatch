@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuentanos sobre ti para que te podamos recomendar un vehículo</title>
+  <link rel="stylesheet" href="C:/Users/swatc/Desktop/UNI/Proyecto grupal/Automatch/.venv/static/styles.css" />
+
+
+  <style>
+    .question { display: none; }
+    .question.active { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="C:/Users/swatc/Desktop/UNI/Proyecto grupal/Automatch/.venv/static/logo.png" alt="Logotipo" width="150" height="auto" />
+  </header>
+
+  <h1>Dime quién eres y te encontraré tu coche ideal</h1>
+
+  <form id="surveyForm" class="form-container" action="/recibir-datos" method="post">
+    
+    <!-- PREGUNTA 1 -->
+    <div class="question active" id="question1">
+      <h2>¿Cúal es tu renta anual?</h2>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="renta" id="renta1" value="> 12000" required />
+          <label for="renta1">> 12.000 €</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="renta" id="renta2" value="12000 - 20000" />
+          <label for="renta2">12.000 - 20.000 €</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="renta" id="renta3" value="20000 - 35000" />
+          <label for="renta3">20.000 - 35.000 €</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="renta" id="renta4" value="35000-60000" />
+          <label for="renta4">35.000-60.000 €</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="renta" id="renta5" value="60000 - 100000" />
+          <label for="renta5">60.000 - 100.000 €</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="renta" id="renta6" value="< 100000" />
+          <label for="renta6">< 100.000 €</label>
+        </div>
+      </div>
+      <button type="button" class="next-btn" disabled>Siguiente</button>
+    </div>
+
+    <!-- PREGUNTA 2 -->
+    <div class="question" id="question2">
+      <h2>¿Cuáles son las condiciones habituales de conducción?</h2>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="condiciones_conduccion" id="condiciones_conduccion1" value="buen clima" required />
+          <label for="condiciones_conduccion1">Buen clima</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="condiciones_conduccion" id="condiciones_conduccion2" value="nieve" />
+          <label for="condiciones_conduccion2">Nieve</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="condiciones_conduccion" id="condiciones_conduccion3" value="off-road" />
+          <label for="condiciones_conduccion3">Off-road</label>
+        </div>
+      </div>
+      <div class="button-container">
+      <button type="button" class="prev-btn">Anterior</button>
+      <button type="button" class="next-btn" disabled>Siguiente</button>
+      </div>
+    </div>
+
+    <!-- PREGUNTA 3 --> 
+    <div class="question" id="question3">
+      <h2>¿Dónde son tus vacaciones ideales?</h2>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="vacaciones" id="vacaciones1" value="playa" required />
+          <label for="vacaciones1">Playa</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="vacaciones" id="vacaciones2" value="montaña" />
+          <label for="vacaciones2">Montaña</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="vacaciones" id="vacaciones3" value="ciudad" />
+          <label for="vacaciones3">Ciudad</label>
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" class="prev-btn">Anterior</button>
+        <button type="button" class="next-btn" disabled>Siguiente</button>
+        </div>
+    </div>
+
+<!-- Pregunta 4 -->
+<div class="question" id="question4">
+  <h2>¿En qué sector trabajas?</h2>
+  <div class="options">
+      <div class="option">
+          <input type="radio" name="sector" id="sector1" value="Tecnología" required>
+          <label for="sector1">Tecnología</label>
+      </div>
+      <div class="option">
+          <input type="radio" name="sector" id="sector2" value="Salud">
+          <label for="sector2">Salud</label>
+      </div>
+      <div class="option">
+          <input type="radio" name="sector" id="sector3" value="Energía">
+          <label for="sector3">Energía</label>
+      </div>
+      <div class="option">
+          <input type="radio" name="sector" id="sector4" value="Servicios Financieros">
+          <label for="sector4">Servicios Financieros</label>
+      </div>
+      <div class="option">
+          <input type="radio" name="sector" id="sector5" value="Industria Construccion y Manufactura">
+          <label for="sector5">Industria Construcción y Manufactura</label>
+      </div>
+      <div class="option">
+          <input type="radio" name="sector" id="sector6" value="Comercio">
+          <label for="sector6">Comercio</label>
+      </div>
+      <div class="option">
+          <input type="radio" name="sector" id="sector7" value="Entretenimiento y Medios">
+          <label for="sector7">Entretenimiento y Medios</label>
+      </div>
+      <div class="option">
+          <input type="radio" name="sector" id="sector8" value="Educación">
+          <label for="sector8">Educación</label>
+      </div>
+      <div class="option">
+          <input type="radio" name="sector" id="sector9" value="Transporte y Logística">
+          <label for="sector9">Transporte y Logística</label>
+      </div>
+      <div class="option">
+          <input type="radio" name="sector" id="sector10" value="Turismo y Ocio">
+          <label for="sector10">Turismo y Ocio</label>
+      </div>
+      <div class="option">
+          <input type="radio" name="sector" id="sector11" value="Otros">
+          <label for="sector11">Otros</label>
+      </div>
+  </div>
+  <div class="button-container">
+    <button type="button" class="prev-btn">Anterior</button>
+    <button type="button" class="next-btn" disabled>Siguiente</button>
+    </div>
+</div>
+
+    <!-- PREGUNTA 5 -->
+    <div class="question" id="question5">
+      <h2>¿En qué comunidad autónoma vives?</h2>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma1" value="Andalucía" required />
+          <label for="comunidad_autonoma1">Andalucía</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma2" value="Aragón" />
+          <label for="comunidad_autonoma2">Aragón</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma3" value="Asturias" />
+          <label for="comunidad_autonoma3">Asturias</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma4" value="Baleares" />
+          <label for="comunidad_autonoma4">Baleares</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma5" value="Canarias" />
+          <label for="comunidad_autonoma5">Canarias</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma6" value="Cantabria" />
+          <label for="comunidad_autonoma6">Cantabria</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma7" value="Castilla y León" />
+          <label for="comunidad_autonoma7">Castilla y León</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma8" value="Castilla-La Mancha" />
+          <label for="comunidad_autonoma8">Castilla-La Mancha</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma9" value="Cataluña" />
+          <label for="comunidad_autonoma9">Cataluña</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma10" value="Extremadura" />
+          <label for="comunidad_autonoma10">Extremadura</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma11" value="Galicia" />
+          <label for="comunidad_autonoma11">Galicia</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma12" value="Madrid" />
+          <label for="comunidad_autonoma12">Madrid</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma13" value="Murcia" />
+          <label for="comunidad_autonoma13">Murcia</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma14" value="Navarra" />
+          <label for="comunidad_autonoma14">Navarra</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma15" value="La Rioja" />
+          <label for="comunidad_autonoma15">La Rioja</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma16" value="País Vasco" />
+          <label for="comunidad_autonoma16">País Vasco</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma17" value="Valencia" />
+          <label for="comunidad_autonoma17">Valencia</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma18" value="Ceuta" />
+          <label for="comunidad_autonoma18">Ceuta</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="comunidad_autonoma" id="comunidad_autonoma19" value="Melilla" />
+          <label for="comunidad_autonoma19">Melilla</label>
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" class="prev-btn">Anterior</button>
+        <button type="button" class="next-btn" disabled>Siguiente</button>
+        </div>
+    </div>
+
+    <!-- PREGUNTA 6 -->
+    <div class="question" id="question6">
+      <h2>¿Tienes familia?</h2>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="familia" id="familia1" value="No" required />
+          <label for="familia1">No</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="familia" id="familia2" value="Si, pequeña" />
+          <label for="familia2">Si, pequeña</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="familia" id="familia3" value="Si, grande" />
+          <label for="familia3">Si, grande</label>
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" class="prev-btn">Anterior</button>
+        <button type="button" class="next-btn" disabled>Siguiente</button>
+        </div>
+    </div>
+
+    <!-- PREGUNTA 7 -->
+    <div class="question" id="question7">
+      <h2>¿Tienes preferencia en el tipo de combustible?</h2>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="tipo_combustible" id="tipo_combustible1" value="Diesel"  required />
+          <label for="tipo_combustible1">Diesel</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="tipo_combustible" id="tipo_combustible2" value="Gasolina" />
+          <label for="tipo_combustible2">Gasolina</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="tipo_combustible" id="tipo_combustible3" value="Híbrido" />
+          <label for="tipo_combustible3">Híbrido</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="tipo_combustible" id="tipo_combustible4" value="Eléctrico" />
+          <label for="tipo_combustible4">Eléctrico</label>
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" class="prev-btn">Anterior</button>
+        <button type="button" class="next-btn" disabled>Siguiente</button>
+        </div>
+    </div>
+
+    <!-- PREGUNTA 8 -->
+    <div class="question" id="question8">
+      <h2>¿Cuál es el uso habitual que haces del vehículo?</h2>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="frecuencia_uso" id="frecuencia_uso1" value="uso particular ocasional"  required />
+          <label for="frecuencia_uso1">Uso particular ocasional (fines de semana, escapadas, etc)</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="frecuencia_uso" id="frecuencia_uso2" value="uso particular habitual" />
+          <label for="frecuencia_uso2">Uso particular habitual (diario)</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="frecuencia_uso" id="frecuencia_uso3" value="viajes largos" />
+          <label for="frecuencia_uso3">Viajes largos</label>
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" class="prev-btn">Anterior</button>
+        <button type="button" class="next-btn" disabled>Siguiente</button>
+        </div>
+    </div>
+
+    <!-- PREGUNTA 9 -->
+    <div class="question" id="question9">
+      <h2>¿Prefieres coche manual o automático?</h2>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="cambio" id="cambio1" value="Manual" required />
+          <label for="cambio1">Manual</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="cambio" id="cambio2" value="Automatico" />
+          <label for="cambio2">Automático</label>
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" class="prev-btn">Anterior</button>
+        <button type="button" class="next-btn" disabled>Siguiente</button>
+        </div>
+    </div>
+
+    <!-- PREGUNTA 10 -->
+    <div class="question" id="question10">
+      <h2>¿Tienes parking?</h2>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="plaza_parking" id="plaza_parking1" value="Si" required />
+          <label for="plaza_parking1">Si</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="plaza_parking" id="plaza_parking2" value="No" />
+          <label for="plaza_parking2">No</label>
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" class="prev-btn">Anterior</button>
+        <button type="button" class="next-btn" disabled>Siguiente</button>
+        </div>
+    </div>
+
+    <!-- PREGUNTA 11 -->
+    <div class="question" id="question11">
+      <h2>¿Cuál es tu experiencia de conducción?</h2>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="experiencia_conduccion" id="experiencia_conduccion1" value="Novato" required />
+          <label for="experiencia_conduccion1">Novato</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="experiencia_conduccion" id="experiencia_conduccion2" value="Intermedio" />
+          <label for="experiencia_conduccion2">Intermedio</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="experiencia_conduccion" id="experiencia_conduccion3" value="Experto" />
+          <label for="experiencia_conduccion3">Experto</label>
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" class="prev-btn">Anterior</button>
+        <button type="submit" class="next-btn" id="end">¡Encuentra tu coche!</button>
+        </div>
+    </div>
+
+
+  </form>
+
+  <script src="C:/Users/swatc/Desktop/UNI/Proyecto grupal/Automatch/.venv/static/script.js"></script>
+
+  <script>
+    const questions = document.querySelectorAll('.question');
+    let currentQuestion = 0;
+
+    function showQuestion(index) {
+      questions.forEach((q, i) => {
+        q.classList.toggle('active', i === index);
+      });
+      currentQuestion = index;
+    }
+
+    function showNextQuestion() {
+      if (currentQuestion < questions.length - 1) {
+        showQuestion(currentQuestion + 1);
+      }
+    }
+
+    function showPreviousQuestion() {
+      if (currentQuestion > 0) {
+        showQuestion(currentQuestion - 1);
+      }
+    }
+
+    questions.forEach((question) => {
+      const nextButton = question.querySelector('.next-btn');
+      const prevButton = question.querySelector('.prev-btn');
+      const options = question.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+
+      if (nextButton) {
+        nextButton.addEventListener('click', showNextQuestion);
+      }
+
+      if (prevButton) {
+        prevButton.addEventListener('click', showPreviousQuestion);
+      }
+
+      options.forEach(option => {
+        option.addEventListener('change', () => {
+          const anySelected = Array.from(options).some(opt => opt.checked);
+          nextButton.disabled = !anySelected;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
