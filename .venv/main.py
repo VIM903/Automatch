@@ -230,15 +230,3 @@ def recibir_datos(datos: DatosEntrada, request: Request):
             status_code=500,  # Código de error, puedes cambiarlo según sea necesario
             content={"detail": f"Error al procesar la solicitud: {str(e)}"}
         )
-
-
-
-
-
-
-
-
-        
-
-
-
